@@ -164,13 +164,10 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 .income-tree h4{color:#0369a1;font-size:17px;margin-bottom:16px;text-align:center}
 .income-root{background:linear-gradient(135deg,#fef3c7,#fde68a);border:2px solid #f59e0b;border-radius:12px;padding:14px;text-align:center;font-weight:700;color:#78350f;margin-bottom:16px;font-size:16px}
 .income-branches{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.income-branch{background:#fff;border-radius:12px;padding:14px;border-left:4px solid var(--accent);transition:all .3s;cursor:pointer}
+.income-branch{background:#fff;border-radius:12px;padding:14px;border-left:4px solid var(--accent);transition:all .3s;cursor:pointer;display:flex;align-items:center;justify-content:center;min-height:60px}
 .income-branch:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,.08)}
 .income-branch.active{box-shadow:0 0 0 3px rgba(37,99,235,.3)}
-.income-branch h5{color:var(--primary);font-size:14px;margin-bottom:8px;display:flex;align-items:center;gap:6px}
-.income-branch ul{list-style:none;padding:0}
-.income-branch ul li{padding:4px 0 4px 18px;position:relative;font-size:13px;color:var(--text)}
-.income-branch ul li::before{content:'•';position:absolute;left:6px;color:var(--accent);font-weight:700}
+.income-branch h5{color:var(--primary);font-size:15px;margin:0;display:flex;align-items:center;gap:8px;text-align:center;justify-content:center}
 .branch-labor{border-left-color:#16a34a}
 .branch-property{border-left-color:#2563eb}
 .branch-social{border-left-color:#f59e0b}
@@ -263,6 +260,40 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 .budget-item-price{font-weight:700;color:var(--accent);font-size:15px}
 .budget-item-type{font-size:11px;color:var(--text-muted);font-style:italic}
 .budget-feedback{margin-top:16px;padding:12px;border-radius:10px;background:#fff;border:2px solid var(--border);font-size:14px;min-height:60px}
+/* === КАЛЬКУЛЯТОР ОСОБИСТОГО БЮДЖЕТУ === */
+.my-budget-wrap{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:24px;margin:16px 0}
+.my-budget-wrap h4{color:#1e40af;font-size:18px;margin-bottom:16px;text-align:center;display:flex;align-items:center;justify-content:center;gap:8px}
+.my-budget-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.my-budget-col{display:flex;flex-direction:column;gap:12px}
+.my-budget-card{background:#fff;border-radius:14px;padding:16px;box-shadow:0 4px 12px rgba(30,58,138,.08);border:2px solid transparent}
+.my-budget-title{font-size:16px;font-weight:700;text-align:center;margin-bottom:12px;padding:10px;border-radius:10px;color:#fff;display:flex;align-items:center;justify-content:center;gap:6px}
+.my-budget-title.income{background:linear-gradient(135deg,#16a34a,#15803d)}
+.my-budget-title.expense{background:linear-gradient(135deg,#9333ea,#7e22ce)}
+.my-budget-title.savings{background:linear-gradient(135deg,#2563eb,#1d4ed8)}
+.my-budget-title.total{background:linear-gradient(135deg,#f59e0b,#d97706)}
+.my-budget-title.balance{background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#78350f}
+.my-budget-title.deficit{background:linear-gradient(135deg,#dc2626,#b91c1c)}
+.my-budget-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.my-budget-row .emoji{font-size:20px;width:28px;text-align:center;flex-shrink:0}
+.my-budget-row .lbl{flex:1;font-size:13px;color:var(--text);min-width:0}
+.my-budget-row input[type="number"]{width:90px;padding:6px 10px;border:2px solid var(--border);border-radius:8px;font-size:13px;text-align:right;transition:border-color .2s;background:#fff;color:var(--text)}
+.my-budget-row input[type="number"]:focus{outline:none;border-color:var(--accent)}
+.my-budget-row .cur{font-size:12px;color:var(--text-muted)}
+.my-budget-total{display:flex;justify-content:space-between;align-items:center;background:var(--bg);padding:10px;border-radius:8px;font-weight:700;font-size:14px;margin-top:8px}
+.my-budget-total .val{color:var(--primary);font-size:16px}
+.my-budget-goal{width:100%;padding:8px;border:2px solid var(--border);border-radius:8px;font-size:13px;margin-bottom:10px;background:#fff;color:var(--text)}
+.my-budget-goal:focus{outline:none;border-color:var(--accent)}
+.my-budget-result{text-align:center;padding:12px;border-radius:10px;font-size:15px;font-weight:700;margin-top:10px}
+.my-budget-result.pos{background:#dcfce7;color:#166534;border:2px solid var(--success)}
+.my-budget-result.neg{background:#fee2e2;color:#991b1b;border:2px solid var(--danger)}
+.my-budget-result.neu{background:#fef3c7;color:#78350f;border:2px solid var(--warning)}
+.my-budget-desc{font-size:11px;color:var(--text-muted);margin-top:6px;text-align:center;font-style:italic}
+.my-budget-center{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.my-budget-center-card{background:#fff;border-radius:50%;width:130px;height:130px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(30,58,138,.15);border:3px solid var(--accent)}
+.my-budget-center-card .big{font-size:36px}
+.my-budget-center-card .txt{font-weight:700;color:var(--primary);font-size:14px}
+.my-budget-check-btn{width:100%;padding:12px;background:var(--success);color:#fff;border:none;border-radius:10px;font-weight:700;font-size:14px;cursor:pointer;transition:all .2s;margin-top:8px}
+.my-budget-check-btn:hover{background:#15803d}
 @media(max-width:968px){
 .hero-unified{grid-template-columns:1fr}
 .hero-illustration{border-bottom:2px dashed var(--accent);min-height:300px}
@@ -276,6 +307,8 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 .budget-items{grid-template-columns:1fr 1fr}
 .tf-container{grid-template-columns:1fr}
 .emp-details-grid{grid-template-columns:1fr}
+.my-budget-grid{grid-template-columns:1fr}
+.my-budget-center{order:-1}
 }
 @media(max-width:768px){
 .header{padding:16px;border-radius:0 0 12px 12px}
@@ -296,6 +329,8 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 .emp-card-icon{font-size:30px}
 .emp-card-title{font-size:15px}
 .emp-card-body{padding:0 16px 16px 16px}
+.my-budget-wrap{padding:16px}
+.my-budget-row input[type="number"]{width:80px}
 }
 @media(max-width:480px){
 .step-title{font-size:18px}
@@ -313,7 +348,7 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="top-progress-bar"><div class="top-progress-fill" id="topProgressBar"></div></div>
 <div class="progress-widget" id="progressWidget" onclick="showProgressModal()" tabindex="0" role="button" aria-label="Прогрес">
 <div class="progress-widget-header"><span class="progress-widget-title">📊 Прогрес</span><span class="progress-widget-percentage" id="widgetPercentage">0%</span></div>
-<div style="font-size:10px;color:var(--text-muted);margin-bottom:6px">Виконано: <strong id="widgetTasks">0/11</strong></div>
+<div style="font-size:10px;color:var(--text-muted);margin-bottom:6px">Виконано: <strong id="widgetTasks">0/12</strong></div>
 <div class="progress-widget-mini-map" id="widgetMiniMap"></div>
 </div>
 <div class="toast-container" id="toastContainer"></div>
@@ -356,6 +391,7 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <li data-icon="🌳">Класифікуватимеш джерела доходів</li>
 <li data-icon="💼">Аналізуватимеш форми зайнятості</li>
 <li data-icon="📊">Складатимеш бюджет родини Хоменків</li>
+<li data-icon="🧮">Складеш власний особистий бюджет на місяць</li>
 <li data-icon="🛒">Оцінюватимеш споживчий вибір</li>
 <li data-icon="⭐">Оціниш свої вміння</li>
 </ul></div>
@@ -412,40 +448,15 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="income-branches">
 <div class="income-branch branch-labor" onclick="showIncome('labor')" tabindex="0" role="button" aria-label="Трудові надходження" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
 <h5>💼 Трудові надходження</h5>
-<ul>
-<li>Заробітна плата</li>
-<li>Надбавки, премії, бонуси</li>
-<li>Винагорода фрілансера</li>
-<li>Дохід від підприємницької діяльності</li>
-<li>Доходи від особистого підсобного господарства</li>
-</ul>
 </div>
 <div class="income-branch branch-property" onclick="showIncome('property')" tabindex="0" role="button" aria-label="Доходи від власності" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
 <h5>🏠 Доходи від власності</h5>
-<ul>
-<li>Відсотки за депозитом</li>
-<li>Дивіденди</li>
-<li>Орендна плата</li>
-<li>Доходи від продажу активів</li>
-</ul>
 </div>
 <div class="income-branch branch-social" onclick="showIncome('social')" tabindex="0" role="button" aria-label="Соціальні доходи" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
 <h5>🤝 Соціальні доходи</h5>
-<ul>
-<li>Пенсія</li>
-<li>Стипендія</li>
-<li>Субсидія</li>
-<li>Пільги</li>
-<li>Соціальна допомога</li>
-</ul>
 </div>
 <div class="income-branch branch-other" onclick="showIncome('other')" tabindex="0" role="button" aria-label="Інші доходи" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
 <h5>🎁 Інші доходи</h5>
-<ul>
-<li>Подарунки</li>
-<li>Спадщина</li>
-<li>Виграш у лотерею</li>
-</ul>
 </div>
 </div>
 <div class="income-details" id="incomeDetails">
@@ -782,7 +793,7 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 </main>
 <!-- КРОК 4: ПЛАНУВАННЯ БЮДЖЕТУ -->
 <main class="container hidden" id="step4Page">
-<div class="step-header"><div class="step-header-top"><h2 class="step-title">📊 Крок 4. Як планувати бюджет</h2><span class="step-badge">2 завдання</span></div></div>
+<div class="step-header"><div class="step-header-top"><h2 class="step-title">📊 Крок 4. Як планувати бюджет</h2><span class="step-badge">3 завдання</span></div></div>
 <section class="card" id="s4Theory">
 <h2>📖 Теоретичний блок</h2>
 <div class="theory-compact" style="background:linear-gradient(135deg,#fef3c7,#fde68a);border-color:#fbbf24">
@@ -838,8 +849,81 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div id="s4t1f" class="feedback" style="display:none"></div>
 <div class="navigation"><button class="btn btn-secondary" onclick="showS4('s4Theory')">← Назад</button><button class="btn btn-primary" onclick="chkBudget()">✓ Перевірити</button><button class="btn btn-success" onclick="showS4('s4t2')">Далі →</button></div>
 </section>
+<!-- НОВЕ ЗАВДАННЯ: ОСОБИСТИЙ БЮДЖЕТ -->
 <section class="card hidden" id="s4t2">
-<h2>🔄 Завдання 2. Віднови порядок кроків бюджету</h2>
+<h2>🧮 Завдання 2. Мій особистий бюджет на місяць</h2>
+<div class="feedback feedback-warning mb-24">
+<strong>📌 Інструкція:</strong><br>
+1️⃣ Заповни свої реальні (або уявні) доходи та витрати.<br>
+2️⃣ Вкажи ціль заощаджень і суму, яку хочеш відкладати.<br>
+3️⃣ Переглянь результат: чи є в тебе залишок, чи дефіцит?<br>
+4️⃣ Натисни «✓ Перевірити мій бюджет», коли будеш готовий(а).
+</div>
+<div class="my-budget-wrap">
+<h4>🧮 Складіть особистий бюджет на місяць</h4>
+<div class="my-budget-grid">
+<!-- ДОХОДИ -->
+<div class="my-budget-col">
+<div class="my-budget-card">
+<div class="my-budget-title income">💚 МОЇ ДОХОДИ</div>
+<div class="my-budget-row"><span class="emoji">👛</span><span class="lbl">Кишенькові гроші</span><input type="number" class="mb-income" data-name="кишенькові" min="0" value="0"><span class="cur">грн</span></div>
+<div class="my-budget-row"><span class="emoji">🎁</span><span class="lbl">Подарунки, грошова допомога</span><input type="number" class="mb-income" data-name="подарунки" min="0" value="0"><span class="cur">грн</span></div>
+<div class="my-budget-row"><span class="emoji">💼</span><span class="lbl">Підробіток, заробіток</span><input type="number" class="mb-income" data-name="заробіток" min="0" value="0"><span class="cur">грн</span></div>
+<div class="my-budget-row"><span class="emoji">➕</span><span class="lbl">Інше</span><input type="number" class="mb-income" data-name="інше" min="0" value="0"><span class="cur">грн</span></div>
+<div class="my-budget-total"><span>Мій дохід:</span><span class="val" id="mbTotalIncome">0 грн</span></div>
+</div>
+<div class="my-budget-card">
+<div class="my-budget-title balance">⭐ ЗАЛИШОК</div>
+<div class="my-budget-total"><span>Залишок:</span><span class="val" id="mbBalance">0 грн</span></div>
+<p class="my-budget-desc">Це гроші, які залишаються після всіх витрат і заощаджень.</p>
+</div>
+</div>
+<!-- ЦЕНТР -->
+<div class="my-budget-col">
+<div class="my-budget-center">
+<div class="my-budget-center-card">
+<div class="big">🧮</div>
+<div class="txt">БЮДЖЕТ</div>
+</div>
+</div>
+<div class="my-budget-card">
+<div class="my-budget-title savings">💰 МОЇ ЗАОЩАДЖЕННЯ</div>
+<label style="font-size:13px;color:var(--text)">На що я хочу заощадити?</label>
+<input type="text" class="my-budget-goal" id="mbGoal" placeholder="Наприклад: новий телефон">
+<div class="my-budget-row" style="margin-top:10px">
+<span class="lbl">Сума заощаджень:</span>
+<input type="number" id="mbSavings" min="0" value="0" style="width:90px">
+<span class="cur">грн</span>
+</div>
+</div>
+<div class="my-budget-card">
+<div class="my-budget-title deficit">⛈️ ДЕФІЦИТ</div>
+<div class="my-budget-total"><span>Дефіцит:</span><span class="val" id="mbDeficit">0 грн</span></div>
+<p class="my-budget-desc">Це коли витрати перевищують дохід.</p>
+</div>
+</div>
+<!-- ВИТРАТИ -->
+<div class="my-budget-col">
+<div class="my-budget-card">
+<div class="my-budget-title expense">🛍️ МОЇ ВИТРАТИ</div>
+<div class="my-budget-row"><span class="emoji">🛒</span><span class="lbl">Харчування</span><input type="number" class="mb-expense" data-name="харчування" min="0" value="0"><span class="cur">грн</span></div>
+<div class="my-budget-row"><span class="emoji">🚌</span><span class="lbl">Транспорт</span><input type="number" class="mb-expense" data-name="транспорт" min="0" value="0"><span class="cur">грн</span></div>
+<div class="my-budget-row"><span class="emoji">📚</span><span class="lbl">Навчання, розвиток</span><input type="number" class="mb-expense" data-name="навчання" min="0" value="0"><span class="cur">грн</span></div>
+<div class="my-budget-row"><span class="emoji">👕</span><span class="lbl">Одяг, взуття</span><input type="number" class="mb-expense" data-name="одяг" min="0" value="0"><span class="cur">грн</span></div>
+<div class="my-budget-row"><span class="emoji">🎧</span><span class="lbl">Розваги, відпочинок</span><input type="number" class="mb-expense" data-name="розваги" min="0" value="0"><span class="cur">грн</span></div>
+<div class="my-budget-row"><span class="emoji">📱</span><span class="lbl">Зв'язок, інтернет</span><input type="number" class="mb-expense" data-name="зв'язок" min="0" value="0"><span class="cur">грн</span></div>
+<div class="my-budget-row"><span class="emoji">💬</span><span class="lbl">Інше</span><input type="number" class="mb-expense" data-name="інше" min="0" value="0"><span class="cur">грн</span></div>
+<div class="my-budget-total"><span>Всього витрат:</span><span class="val" id="mbTotalExpense">0 грн</span></div>
+</div>
+<button class="my-budget-check-btn" onclick="chkMyBudget()">✓ Перевірити мій бюджет</button>
+</div>
+</div>
+</div>
+<div id="s4t2f" class="feedback" style="display:none"></div>
+<div class="navigation"><button class="btn btn-secondary" onclick="showS4('s4t1')">← Назад</button><button class="btn btn-success" onclick="showS4('s4t3')">Далі →</button></div>
+</section>
+<section class="card hidden" id="s4t3">
+<h2>🔄 Завдання 3. Віднови порядок кроків бюджету</h2>
 <div class="tap-instruction">
 <div class="tap-instruction-icon">👆</div>
 <div><strong>Як виконувати:</strong><br>
@@ -858,8 +942,8 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 </div>
 </div>
 <div style="text-align:center;margin-top:12px"><button class="dnd-reset-btn" onclick="resetSort()">🔄 Перемішати знову</button></div>
-<div id="s4t2f" class="feedback" style="display:none"></div>
-<div class="navigation"><button class="btn btn-secondary" onclick="showS4('s4t1')">← Назад</button><button class="btn btn-primary" onclick="chkSort()">✓ Перевірити</button><button class="btn btn-success" onclick="goToStep(5)">Далі: Крок 5 →</button></div>
+<div id="s4t3f" class="feedback" style="display:none"></div>
+<div class="navigation"><button class="btn btn-secondary" onclick="showS4('s4t2')">← Назад</button><button class="btn btn-primary" onclick="chkSort()">✓ Перевірити</button><button class="btn btn-success" onclick="goToStep(5)">Далі: Крок 5 →</button></div>
 </section>
 </main>
 <!-- КРОК 5: КУЛЬТУРА СПОЖИВАННЯ -->
@@ -939,12 +1023,14 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <main class="container hidden" id="step6Page">
 <div class="step6-header"><h2>🎉 Вітаємо! Ти завершив(ла) параграф!</h2><p>Час дізнатися свій рівень</p></div>
 <div class="card"><h2>⭐ Оцініть свої вміння</h2>
-<div class="skill-eval"><div class="skill-title">💼 Я можу розрізняти форми зайнятості та види винагороди за працю</div><div class="star-rating" data-skill="1"><span class="star" onclick="rate(1,1)">★</span><span class="star" onclick="rate(1,2)">★</span><span class="star" onclick="rate(1,3)">★</span><span class="star" onclick="rate(1,4)">★</span><span class="star" onclick="rate(1,5)">★</span></div></div>
-<div class="skill-eval"><div class="skill-title">📊 Я можу скласти простий особистий або сімейний бюджет</div><div class="star-rating" data-skill="2"><span class="star" onclick="rate(2,1)">★</span><span class="star" onclick="rate(2,2)">★</span><span class="star" onclick="rate(2,3)">★</span><span class="star" onclick="rate(2,4)">★</span><span class="star" onclick="rate(2,5)">★</span></div></div>
-<div class="skill-eval"><div class="skill-title">🛒 Я вмію робити обдуманий споживчий вибір</div><div class="star-rating" data-skill="3"><span class="star" onclick="rate(3,1)">★</span><span class="star" onclick="rate(3,2)">★</span><span class="star" onclick="rate(3,3)">★</span><span class="star" onclick="rate(3,4)">★</span><span class="star" onclick="rate(3,5)">★</span></div></div>
+<div class="skill-eval"><div class="skill-title">💵 Я можу назвати джерела доходів особи та сім'ї</div><div class="star-rating" data-skill="1"><span class="star" onclick="rate(1,1)">★</span><span class="star" onclick="rate(1,2)">★</span><span class="star" onclick="rate(1,3)">★</span><span class="star" onclick="rate(1,4)">★</span><span class="star" onclick="rate(1,5)">★</span></div></div>
+<div class="skill-eval"><div class="skill-title">💼 Я розрізняю форми зайнятості та види винагороди</div><div class="star-rating" data-skill="2"><span class="star" onclick="rate(2,1)">★</span><span class="star" onclick="rate(2,2)">★</span><span class="star" onclick="rate(2,3)">★</span><span class="star" onclick="rate(2,4)">★</span><span class="star" onclick="rate(2,5)">★</span></div></div>
+<div class="skill-eval"><div class="skill-title">📊 Я можу скласти простий особистий або сімейний бюджет</div><div class="star-rating" data-skill="3"><span class="star" onclick="rate(3,1)">★</span><span class="star" onclick="rate(3,2)">★</span><span class="star" onclick="rate(3,3)">★</span><span class="star" onclick="rate(3,4)">★</span><span class="star" onclick="rate(3,5)">★</span></div></div>
+<div class="skill-eval"><div class="skill-title">🛒 Я вмію робити обдуманий споживчий вибір</div><div class="star-rating" data-skill="4"><span class="star" onclick="rate(4,1)">★</span><span class="star" onclick="rate(4,2)">★</span><span class="star" onclick="rate(4,3)">★</span><span class="star" onclick="rate(4,4)">★</span><span class="star" onclick="rate(4,5)">★</span></div></div>
+<div class="skill-eval"><div class="skill-title">🎯 Я розумію різницю між позикою та доходом</div><div class="star-rating" data-skill="5"><span class="star" onclick="rate(5,1)">★</span><span class="star" onclick="rate(5,2)">★</span><span class="star" onclick="rate(5,3)">★</span><span class="star" onclick="rate(5,4)">★</span><span class="star" onclick="rate(5,5)">★</span></div></div>
 </div>
 <div class="stats-grid">
-<div class="stat-card"><div class="stat-value" id="statTasks">0/11</div><div class="stat-label">✅ Виконано</div></div>
+<div class="stat-card"><div class="stat-value" id="statTasks">0/12</div><div class="stat-label">✅ Виконано</div></div>
 <div class="stat-card"><div class="stat-value" id="statCorrect">0</div><div class="stat-label">🎯 Правильних</div></div>
 <div class="stat-card"><div class="stat-value" id="statSteps">0/5</div><div class="stat-label">📍 Кроків</div></div>
 <div class="stat-card"><div class="stat-value" id="statAccuracy">0%</div><div class="stat-label">🏅 Точність</div></div>
@@ -959,7 +1045,7 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="modal"><div class="modal-header"><h2 id="pTitle">📊 Мій прогрес</h2><button class="modal-close" onclick="closeModal('progressModal')" aria-label="Закрити">✕</button></div>
 <div class="text-center"><div style="font-size:48px;margin-bottom:16px" id="mEmoji">⭐☆☆☆☆</div><h3 style="color:var(--primary);margin-bottom:24px" id="mName">Початківець</h3>
 <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:20px">
-<div style="background:var(--bg);padding:14px;border-radius:12px"><div style="font-size:24px;font-weight:700;color:var(--accent)" id="mT">0/11</div><div style="font-size:12px;color:var(--text-muted)">Завдань</div></div>
+<div style="background:var(--bg);padding:14px;border-radius:12px"><div style="font-size:24px;font-weight:700;color:var(--accent)" id="mT">0/12</div><div style="font-size:12px;color:var(--text-muted)">Завдань</div></div>
 <div style="background:var(--bg);padding:14px;border-radius:12px"><div style="font-size:24px;font-weight:700;color:var(--success)" id="mC">0</div><div style="font-size:12px;color:var(--text-muted)">Правильних</div></div>
 <div style="background:var(--bg);padding:14px;border-radius:12px"><div style="font-size:24px;font-weight:700;color:var(--warning)" id="mS">0/5</div><div style="font-size:12px;color:var(--text-muted)">Кроків</div></div>
 <div style="background:var(--bg);padding:14px;border-radius:12px"><div style="font-size:24px;font-weight:700;color:var(--primary)" id="mA">0%</div><div style="font-size:12px;color:var(--text-muted)">Точність</div></div>
@@ -970,23 +1056,23 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="modal"><div class="modal-header"><h2 id="hTitle">❓ Як працювати</h2><button class="modal-close" onclick="closeModal('helpModal')" aria-label="Закрити">✕</button></div>
 <div class="feature-list">
 <div data-icon="🚀" style="padding:10px 0 10px 32px;position:relative;border-bottom:1px solid var(--border)"><strong>Як почати?</strong><br>Натисни «Розпочати параграф».</div>
-<div data-icon="✅" style="padding:10px 0 10px 32px;position:relative;border-bottom:1px solid var(--border)"><strong>Форми завдань:</strong><br>Тести, tap-to-tap, класифікація, зіставлення, акордеон, правда/брехня, сортування, симулятор бюджету.</div>
+<div data-icon="✅" style="padding:10px 0 10px 32px;position:relative;border-bottom:1px solid var(--border)"><strong>Форми завдань:</strong><br>Тести, tap-to-tap, класифікація, зіставлення, акордеон, правда/брехня, сортування, симулятор бюджету, калькулятор особистого бюджету.</div>
 <div data-icon="📱" style="padding:10px 0 10px 32px;position:relative;border-bottom:1px solid var(--border)"><strong>На телефоні:</strong><br>Усі перетягування працюють через прості натискання — обери елемент, потім обери місце.</div>
 <div data-icon="🏆" style="padding:10px 0 10px 32px;position:relative"><strong>Прогрес:</strong><br>Натисни на віджет прогресу для перегляду статистики.</div>
 </div>
 <button class="btn btn-primary mt-24" onclick="closeModal('helpModal')" style="width:100%">Зрозуміло!</button></div></div>
 <script>
-var TOTAL_TASKS = 11;
+var TOTAL_TASKS = 12;
 var ST = {
 step1: {t:1, c:0, tasks:{task1:0}},
 step2: {t:4, c:0, tasks:{task1:0, task1b:0, task2:0, task3:0}},
 step3: {t:3, c:0, tasks:{task1:0, task2:0, task3:0}},
-step4: {t:2, c:0, tasks:{task1:0, task2:0}},
+step4: {t:3, c:0, tasks:{task1:0, task2:0, task3:0}},
 step5: {t:2, c:0, tasks:{task1:0, task2:0}}
 };
 var SC = {1:0, 2:0, 3:0, 4:0, 5:0};
 var PT = {c:0, t:TOTAL_TASKS, a:[]};
-var state = {cs:0, sr:[0,0,0]};
+var state = {cs:0, sr:[0,0,0,0,0]};
 var tfCompleted = {};
 function addC(id) {
 if (PT.a.indexOf(id) !== -1) return;
@@ -1045,7 +1131,7 @@ wb.appendChild(dot);
 }
 function saveP() {
 try {
-sessionStorage.setItem("s29v3", JSON.stringify({
+sessionStorage.setItem("s29v4", JSON.stringify({
 PT: {c: PT.c, t: TOTAL_TASKS, a: PT.a},
 ST: ST, SC: SC, state: state
 }));
@@ -1053,7 +1139,7 @@ ST: ST, SC: SC, state: state
 }
 function loadP() {
 try {
-var s = sessionStorage.getItem("s29v3");
+var s = localStorage.getItem("s29v4");
 if (s) {
 var d = JSON.parse(s);
 if (d.PT) { PT.c = d.PT.c || 0; PT.a = d.PT.a || []; }
@@ -1068,8 +1154,8 @@ ST["step" + i].tasks = d.ST["step" + i].tasks || ST["step" + i].tasks;
 if (d.SC) { for (var j = 1; j <= 5; j++) SC[j] = d.SC[j] || 0; }
 if (d.state) {
 state.cs = d.state.cs || 0;
-state.sr = d.state.sr || [0,0,0];
-while (state.sr.length < 3) state.sr.push(0);
+state.sr = d.state.sr || [0,0,0,0,0];
+while (state.sr.length < 5) state.sr.push(0);
 }
 }
 } catch (err) { console.error("Error loading:", err); }
@@ -1080,7 +1166,7 @@ var steps = [
 {id:1, icon:"🎯", title:"Стартове завдання", tasks:1},
 {id:2, icon:"💵", title:"Джерела доходів", tasks:4},
 {id:3, icon:"💼", title:"Форми зайнятості", tasks:3},
-{id:4, icon:"📊", title:"Планування бюджету", tasks:2},
+{id:4, icon:"📊", title:"Планування бюджету", tasks:3},
 {id:5, icon:"🛒", title:"Культура споживання", tasks:2},
 {id:6, icon:"🏆", title:"Самооцінювання", tasks:0}
 ];
@@ -1175,10 +1261,11 @@ document.getElementById(id).classList.remove("hidden");
 window.scrollTo({top: 0, behavior: "smooth"});
 }
 function showS4(id) {
-["s4Theory","s4t1","s4t2"].forEach(function(s) { var e = document.getElementById(s); if (e) e.classList.add("hidden"); });
+["s4Theory","s4t1","s4t2","s4t3"].forEach(function(s) { var e = document.getElementById(s); if (e) e.classList.add("hidden"); });
 document.getElementById(id).classList.remove("hidden");
 if (id === "s4t1") initBudget();
-if (id === "s4t2") initSort();
+if (id === "s4t2") initMyBudget();
+if (id === "s4t3") initSort();
 window.scrollTo({top: 0, behavior: "smooth"});
 }
 function showS5(id) {
@@ -1198,8 +1285,8 @@ var branches = document.querySelectorAll(".income-branch");
 for (var i = 0; i < branches.length; i++) branches[i].classList.remove("active");
 var data = incomeData[type];
 var details = document.getElementById("incomeDetails");
-var html = '<h5>' + data.title + '</h5><p style="font-size:13px;color:var(--text-muted);margin-bottom:8px">' + data.desc + '</p><ul style="list-style:none;padding:0">';
-for (var j = 0; j < data.items.length; j++) html += '<li style="padding:4px 0;font-size:14px">• ' + data.items[j] + '</li>';
+var html = '<h5>' + data.title + '</h5><p style="font-size:13px;color:var(--text-muted);margin-bottom:8px;font-style:italic">' + data.desc + '</p><ul style="list-style:none;padding:0">';
+for (var j = 0; j < data.items.length; j++) html += '<li style="padding:6px 0;font-size:14px;border-bottom:1px solid var(--border)">• ' + data.items[j] + '</li>';
 html += '</ul>';
 details.innerHTML = html;
 details.classList.add("active");
@@ -1222,7 +1309,7 @@ card.scrollIntoView({behavior: "smooth", block: "start"});
 }, 150);
 }
 }
-// === БЮДЖЕТ ===
+// === БЮДЖЕТ (симулятор родини Хоменків) ===
 var budgetData = [
 {id:1, name:"🏠 Житло (оренда, комунальні)", price:15000, type:"need", must:true},
 {id:2, name:"🍎 Харчування", price:12000, type:"need", must:true},
@@ -1331,6 +1418,85 @@ f.className = "feedback feedback-error";
 f.innerHTML = "<strong>❌ Не покриті обов'язкові витрати:</strong><br><em>" + missed.join(", ") + "</em>. Спочатку — потреби, потім — бажання.";
 }
 }
+// === ОСОБИСТИЙ БЮДЖЕТ (калькулятор) ===
+var myBudgetChecked = false;
+function initMyBudget() {
+myBudgetChecked = false;
+var f = document.getElementById("s4t2f");
+if (f) f.style.display = "none";
+calcMyBudget();
+}
+function calcMyBudget() {
+var incomeInputs = document.querySelectorAll('.mb-income');
+var expenseInputs = document.querySelectorAll('.mb-expense');
+var savingsInput = document.getElementById('mbSavings');
+var totalIncome = 0;
+incomeInputs.forEach(function(inp) {
+totalIncome += parseFloat(inp.value) || 0;
+});
+var totalExpense = 0;
+expenseInputs.forEach(function(inp) {
+totalExpense += parseFloat(inp.value) || 0;
+});
+var savings = parseFloat(savingsInput.value) || 0;
+var balance = totalIncome - totalExpense - savings;
+var deficit = balance < 0 ? Math.abs(balance) : 0;
+document.getElementById('mbTotalIncome').textContent = totalIncome.toLocaleString() + ' грн';
+document.getElementById('mbTotalExpense').textContent = totalExpense.toLocaleString() + ' грн';
+var balEl = document.getElementById('mbBalance');
+balEl.textContent = balance.toLocaleString() + ' грн';
+balEl.parentElement.className = 'my-budget-total ' + (balance > 0 ? 'positive' : balance < 0 ? 'negative' : 'neutral');
+var defEl = document.getElementById('mbDeficit');
+defEl.textContent = deficit.toLocaleString() + ' грн';
+defEl.parentElement.className = 'my-budget-total ' + (deficit > 0 ? 'negative' : 'positive');
+}
+function chkMyBudget() {
+var f = document.getElementById("s4t2f");
+if (!f) return;
+f.style.display = "block";
+var incomeInputs = document.querySelectorAll('.mb-income');
+var expenseInputs = document.querySelectorAll('.mb-expense');
+var savingsInput = document.getElementById('mbSavings');
+var goalInput = document.getElementById('mbGoal');
+var totalIncome = 0;
+incomeInputs.forEach(function(inp) { totalIncome += parseFloat(inp.value) || 0; });
+var totalExpense = 0;
+expenseInputs.forEach(function(inp) { totalExpense += parseFloat(inp.value) || 0; });
+var savings = parseFloat(savingsInput.value) || 0;
+var goal = goalInput.value.trim();
+if (totalIncome === 0 && totalExpense === 0) {
+f.className = "feedback feedback-warning";
+f.innerHTML = "⚠️ Заповни хоча б доходи або витрати, щоб побачити свій бюджет.";
+return;
+}
+var balance = totalIncome - totalExpense - savings;
+var msg = "";
+if (balance > 0) {
+msg = "<strong>✅ Чудово!</strong> У тебе є залишок <strong>" + balance.toLocaleString() + " грн</strong>. " +
+"Це твої вільні кошти — ти можеш відкласти їх у резерв або використати на заощадження." +
+(goal ? "<br>🎯 Твоя ціль: <em>" + goal + "</em> — чудовий мотиватор заощаджувати!" : "");
+f.className = "feedback feedback-success";
+if (!myBudgetChecked) {
+addC("step4_task2");
+myBudgetChecked = true;
+showToast("Бюджет складено!", "🎉");
+}
+} else if (balance === 0) {
+msg = "<strong>💡 Баланс!</strong> Твої доходи дорівнюють витратам і заощадженням. " +
+"Це добре, але бажано мати невеликий резерв на непередбачувані витрати.";
+f.className = "feedback feedback-warning";
+if (!myBudgetChecked) {
+addC("step4_task2");
+myBudgetChecked = true;
+showToast("Бюджет складено!", "🎉");
+}
+} else {
+msg = "<strong>⚠️ Дефіцит!</strong> Твої витрати перевищують доходи на <strong>" + Math.abs(balance).toLocaleString() + " грн</strong>. " +
+"Переглянь витрати: можливо, щось можна скоротити. Пам'ятай: спочатку — потреби, потім — бажання!";
+f.className = "feedback feedback-error";
+}
+f.innerHTML = msg;
+}
 // === СОРТУВАННЯ ===
 var sortItems = [
 {id:1, text:"Визнач доходи: запиши всі джерела надходжень"},
@@ -1365,7 +1531,7 @@ slot.innerHTML = '<div class="sort-slot-number">' + j + '</div><div class="sort-
 slot.onclick = (function(num, el) { return function() { placeToSlot(num, el); }; })(j, slot);
 slotsContainer.appendChild(slot);
 }
-var f = document.getElementById("s4t2f");
+var f = document.getElementById("s4t3f");
 if (f) f.style.display = "none";
 }
 function selectSortCard(id, el) {
@@ -1454,7 +1620,7 @@ else cards[i].classList.remove("selected");
 }
 function resetSort() { initSort(); showToast("Перемішано!", "🔄"); }
 function chkSort() {
-var f = document.getElementById("s4t2f");
+var f = document.getElementById("s4t3f");
 if (!f) return;
 f.style.display = "block";
 var filledCount = 0;
@@ -1477,7 +1643,7 @@ else { slotEls[j].classList.add("incorrect-pos"); ok = false; }
 if (ok) {
 f.className = "feedback feedback-success";
 f.innerHTML = "<strong>✅ Чудово!</strong> Алгоритм планування бюджету відновлено правильно!";
-addC("step4_task2");
+addC("step4_task3");
 showToast("Завдання виконано!", "🎉");
 } else {
 f.className = "feedback feedback-error";
@@ -1718,7 +1884,6 @@ f.className = "feedback feedback-warning";
 f.innerHTML = "⚠️ Обери <strong>рівно 3</strong> варіанти зі списку. Зараз обрано: " + selOpts.length + ".";
 return;
 }
-// Усі варіанти правильні — це відкрите питання. Зараховуємо будь-який вибір 3-х варіантів.
 for (var j = 0; j < opts.length; j++) {
 if (opts[j].classList.contains("selected")) opts[j].classList.add("correct");
 opts[j].classList.add("disabled");
@@ -1946,7 +2111,7 @@ else stars[i].classList.remove("active");
 }
 function resetProgress() {
 if (confirm("Почати спочатку? Весь прогрес буде скинуто.")) {
-sessionStorage.removeItem("s29v3");
+sessionStorage.removeItem("s29v4");
 location.reload();
 }
 }
@@ -1993,7 +2158,17 @@ overlays[oi].addEventListener("click", function(e) { if (e.target === this) this
 document.addEventListener("keydown", function(e) {
 if (e.key === "Escape") { var ms = document.querySelectorAll(".modal-overlay.active"); for (var i = 0; i < ms.length; i++) ms[i].classList.remove("active"); }
 });
-document.addEventListener("DOMContentLoaded", function() { loadP(); goToMainPage(); });
+document.addEventListener("DOMContentLoaded", function() {
+loadP();
+goToMainPage();
+// Ініціалізація слухачів для особистого бюджету
+var mbIn = document.querySelectorAll('.mb-income');
+var mbEx = document.querySelectorAll('.mb-expense');
+var mbSv = document.getElementById('mbSavings');
+mbIn.forEach(function(inp) { inp.addEventListener('input', calcMyBudget); });
+mbEx.forEach(function(inp) { inp.addEventListener('input', calcMyBudget); });
+if (mbSv) mbSv.addEventListener('input', calcMyBudget);
+});
 </script>
 </body>
 </html>
