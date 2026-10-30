@@ -260,7 +260,6 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 .budget-item-price{font-weight:700;color:var(--accent);font-size:15px}
 .budget-item-type{font-size:11px;color:var(--text-muted);font-style:italic}
 .budget-feedback{margin-top:16px;padding:12px;border-radius:10px;background:#fff;border:2px solid var(--border);font-size:14px;min-height:60px}
-/* === КАЛЬКУЛЯТОР ОСОБИСТОГО БЮДЖЕТУ === */
 .my-budget-wrap{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd;border-radius:16px;padding:24px;margin:16px 0}
 .my-budget-wrap h4{color:#1e40af;font-size:18px;margin-bottom:16px;text-align:center;display:flex;align-items:center;justify-content:center;gap:8px}
 .my-budget-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
@@ -362,7 +361,6 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 </div>
 </div>
 </header>
-<!-- ГОЛОВНА -->
 <main class="container hidden" id="mainPage">
 <div class="hero-unified">
 <div class="hero-illustration">
@@ -380,14 +378,14 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="card" style="margin:0"><h3>🎯 У цьому параграфі ти:</h3>
 <ul class="feature-list">
 <li data-icon="💵">дізнаєшся, з яких джерел формуються доходи особи та сім'ї</li>
-<li data-icon="💼">ознайомитися з формами зайнятості та видами винагороди за працю</li>
+<li data-icon="💼">ознайомишся з формами зайнятості та видами винагороди за працю</li>
 <li data-icon="📊">вчитимешся планувати особистий і сімейний бюджет</li>
 <li data-icon="🛒">опануєш правила культури споживання</li>
 <li data-icon="🎯">зможеш відповідально використовувати власні кошти</li>
 </ul></div>
 <div class="card" style="margin:0"><h3>📋 Що ти робитимеш?</h3>
 <ul class="feature-list">
-<li data-icon="✅">Розподілятимеш 8000 грн літнього заробітку</li>
+<li data-icon="✅">Плануватимеш витрати уявного літнього заробітку</li>
 <li data-icon="🌳">Класифікуватимеш джерела доходів</li>
 <li data-icon="💼">Аналізуватимеш форми зайнятості</li>
 <li data-icon="📊">Складатимеш бюджет родини Хоменків</li>
@@ -398,14 +396,12 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 </div>
 <div class="tip-card">💡 <strong>Пам'ятай:</strong> Бюджет — це не обмеження, а інструмент для розумного використання доходів і контролю витрат.</div>
 </main>
-<!-- КРОК 1: СТАРТОВЕ ЗАВДАННЯ -->
 <main class="container hidden" id="step1Page">
 <div class="step-header"><h2 class="step-title">🎯 Крок 1. Стартове завдання</h2></div>
 <section class="card">
 <div class="question-highlight">
 <span class="question-highlight-icon"></span>
 <div class="question-highlight-text">Уявіть, що ви отримали 8000 грн за літню роботу. Як би ви розподілили ці гроші?</div>
-<div class="question-highlight-sub">Оберіть три варіанти зі списку. Поясніть свій вибір.</div>
 </div>
 <div class="situation-layout">
 <div class="situation-illustration-left">
@@ -431,7 +427,6 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 </div>
 </section>
 </main>
-<!-- КРОК 2: ДЖЕРЕЛА ДОХОДІВ -->
 <main class="container hidden" id="step2Page">
 <div class="step-header"><div class="step-header-top"><h2 class="step-title">💵 Крок 2. Джерела доходів особи та сім'ї</h2><span class="step-badge">4 завдання</span></div></div>
 <section class="card" id="s2Theory">
@@ -589,7 +584,6 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="navigation"><button class="btn btn-secondary" onclick="showS2('s2t2')">← Назад</button><button class="btn btn-primary" onclick="chkAllTF('s2t3',{s2t3q1:'regular',s2t3q2:'once',s2t3q3:'regular',s2t3q4:'once'},'step2_task3')">✓ Завершити</button><button class="btn btn-success" onclick="goToStep(3)">Далі: Крок 3 →</button></div>
 </section>
 </main>
-<!-- КРОК 3: ФОРМИ ЗАЙНЯТОСТІ -->
 <main class="container hidden" id="step3Page">
 <div class="step-header"><div class="step-header-top"><h2 class="step-title">💼 Крок 3. Форми зайнятості та винагорода</h2><span class="step-badge">3 завдання</span></div></div>
 <section class="card" id="s3Theory">
@@ -720,7 +714,7 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 </div>
 </div></div></div>
 <div id="s3t1f" class="feedback" style="display:none"></div>
-<div class="navigation"><button class="btn btn-secondary" onclick="showS3('s3Theory')">← Назад</button><button class="btn btn-primary" onclick="chkAllRadio('s3t1',{s3t1q1:'Підприємництво',s3t1q2:'Самозайнятість',s3t1q3:'Робота за наймом'},'step3_task1')">✓ Завершити</button><button class="btn btn-success" onclick="showS3('s3t2')">Далі →</button></div>
+<div class="navigation"><button class="btn btn-secondary" onclick="showS3('s3Theory')">← Назад</button><button class="btn btn-primary" onclick="chkAllRadio('s3t1',{s3t1q1:'🏪 Підприємництво',s3t1q2:'💻 Самозайнятість',s3t1q3:'🏢 Робота за наймом'},'step3_task1')">✓ Завершити</button><button class="btn btn-success" onclick="showS3('s3t2')">Далі →</button></div>
 </section>
 <section class="card hidden" id="s3t2">
 <h2>🔄 Завдання 2. Зіставлення: форма → винагорода</h2>
@@ -731,8 +725,8 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div style="text-align:center;font-size:20px;color:var(--text-muted)">→</div>
 <select class="matching-select" id="m31" style="width:100%;padding:12px;border:2px solid var(--border);border-radius:8px;font-size:15px;background:#fff;cursor:pointer">
 <option value="">Обери...</option>
-<option value="a">💵 Заробітна плата</option>
 <option value="b">💰 Дохід від замовлень</option>
+<option value="a">💵 Заробітна плата</option>
 <option value="c">💎 Прибуток</option>
 </select>
 </div>
@@ -741,8 +735,8 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div style="text-align:center;font-size:20px;color:var(--text-muted)">→</div>
 <select class="matching-select" id="m32" style="width:100%;padding:12px;border:2px solid var(--border);border-radius:8px;font-size:15px;background:#fff;cursor:pointer">
 <option value="">Обери...</option>
-<option value="a">💵 Заробітна плата</option>
 <option value="b">💰 Дохід від замовлень</option>
+<option value="a">💵 Заробітна плата</option>
 <option value="c">💎 Прибуток</option>
 </select>
 </div>
@@ -751,8 +745,8 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div style="text-align:center;font-size:20px;color:var(--text-muted)">→</div>
 <select class="matching-select" id="m33" style="width:100%;padding:12px;border:2px solid var(--border);border-radius:8px;font-size:15px;background:#fff;cursor:pointer">
 <option value="">Обери...</option>
-<option value="a">💵 Заробітна плата</option>
 <option value="b">💰 Дохід від замовлень</option>
+<option value="a">💵 Заробітна плата</option>
 <option value="c">💎 Прибуток</option>
 </select>
 </div>
@@ -791,7 +785,6 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="navigation"><button class="btn btn-secondary" onclick="showS3('s3t2')">← Назад</button><button class="btn btn-primary" onclick="chkAllTF('s3t3',{s3t3q1:'false',s3t3q2:'true',s3t3q3:'false'},'step3_task3')">✓ Завершити</button><button class="btn btn-success" onclick="goToStep(4)">Далі: Крок 4 →</button></div>
 </section>
 </main>
-<!-- КРОК 4: ПЛАНУВАННЯ БЮДЖЕТУ -->
 <main class="container hidden" id="step4Page">
 <div class="step-header"><div class="step-header-top"><h2 class="step-title">📊 Крок 4. Як планувати бюджет</h2><span class="step-badge">3 завдання</span></div></div>
 <section class="card" id="s4Theory">
@@ -849,7 +842,6 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div id="s4t1f" class="feedback" style="display:none"></div>
 <div class="navigation"><button class="btn btn-secondary" onclick="showS4('s4Theory')">← Назад</button><button class="btn btn-primary" onclick="chkBudget()">✓ Перевірити</button><button class="btn btn-success" onclick="showS4('s4t2')">Далі →</button></div>
 </section>
-<!-- НОВЕ ЗАВДАННЯ: ОСОБИСТИЙ БЮДЖЕТ -->
 <section class="card hidden" id="s4t2">
 <h2>🧮 Завдання 2. Мій особистий бюджет на місяць</h2>
 <div class="feedback feedback-warning mb-24">
@@ -862,7 +854,6 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="my-budget-wrap">
 <h4>🧮 Складіть особистий бюджет на місяць</h4>
 <div class="my-budget-grid">
-<!-- ДОХОДИ -->
 <div class="my-budget-col">
 <div class="my-budget-card">
 <div class="my-budget-title income">💚 МОЇ ДОХОДИ</div>
@@ -878,7 +869,6 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <p class="my-budget-desc">Це гроші, які залишаються після всіх витрат і заощаджень.</p>
 </div>
 </div>
-<!-- ЦЕНТР -->
 <div class="my-budget-col">
 <div class="my-budget-center">
 <div class="my-budget-center-card">
@@ -902,7 +892,6 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <p class="my-budget-desc">Це коли витрати перевищують дохід.</p>
 </div>
 </div>
-<!-- ВИТРАТИ -->
 <div class="my-budget-col">
 <div class="my-budget-card">
 <div class="my-budget-title expense">🛍️ МОЇ ВИТРАТИ</div>
@@ -946,7 +935,6 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="navigation"><button class="btn btn-secondary" onclick="showS4('s4t2')">← Назад</button><button class="btn btn-primary" onclick="chkSort()">✓ Перевірити</button><button class="btn btn-success" onclick="goToStep(5)">Далі: Крок 5 →</button></div>
 </section>
 </main>
-<!-- КРОК 5: КУЛЬТУРА СПОЖИВАННЯ -->
 <main class="container hidden" id="step5Page">
 <div class="step-header"><div class="step-header-top"><h2 class="step-title">🛒 Крок 5. Культура споживання</h2><span class="step-badge">2 завдання</span></div></div>
 <section class="card" id="s5Theory">
@@ -1019,7 +1007,6 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="navigation"><button class="btn btn-secondary" onclick="showS5('s5t1')">← Назад</button><button class="btn btn-primary" onclick="chkAllTF('s5t2',{s5t2q1:'myth',s5t2q2:'truth',s5t2q3:'myth',s5t2q4:'truth'},'step5_task2')">✓ Завершити</button><button class="btn btn-success" onclick="goToStep(6)">Далі: Самооцінювання →</button></div>
 </section>
 </main>
-<!-- КРОК 6: САМООЦІНЮВАННЯ -->
 <main class="container hidden" id="step6Page">
 <div class="step6-header"><h2>🎉 Вітаємо! Ти завершив(ла) параграф!</h2><p>Час дізнатися свій рівень</p></div>
 <div class="card"><h2>⭐ Оцініть свої вміння</h2>
@@ -1040,7 +1027,6 @@ body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background
 <div class="tip-card">💡 <strong>Гроші дають можливості, а відповідальний вибір допомагає використати їх розумно.</strong><br>🌱 Дбай про фінансову грамотність вже сьогодні!</div>
 <div class="navigation"><button class="btn btn-warning" onclick="resetProgress()">🔄 Пройти ще раз</button><button class="btn btn-primary" onclick="goToMainPage()">🏠 На головну</button></div>
 </main>
-<!-- МОДАЛКИ -->
 <div class="modal-overlay" id="progressModal" role="dialog" aria-modal="true" aria-labelledby="pTitle">
 <div class="modal"><div class="modal-header"><h2 id="pTitle">📊 Мій прогрес</h2><button class="modal-close" onclick="closeModal('progressModal')" aria-label="Закрити">✕</button></div>
 <div class="text-center"><div style="font-size:48px;margin-bottom:16px" id="mEmoji">⭐☆☆☆☆</div><h3 style="color:var(--primary);margin-bottom:24px" id="mName">Початківець</h3>
@@ -1273,7 +1259,6 @@ function showS5(id) {
 document.getElementById(id).classList.remove("hidden");
 window.scrollTo({top: 0, behavior: "smooth"});
 }
-// === ДЕРЕВО ДОХОДІВ ===
 var incomeData = {
 labor: {title:"💼 Трудові надходження", desc:"Зароблені власною працею", items:["Заробітна плата","Надбавки, премії, бонуси","Винагорода фрілансера","Дохід від підприємницької діяльності","Доходи від особистого підсобного господарства"]},
 property: {title:"🏠 Доходи від власності", desc:"Пасивний дохід від майна", items:["Відсотки за депозитом","Дивіденди","Орендна плата","Доходи від продажу активів"]},
@@ -1293,7 +1278,6 @@ details.classList.add("active");
 var activeBranch = document.querySelector(".branch-" + type);
 if (activeBranch) activeBranch.classList.add("active");
 }
-// === ФОРМИ ЗАЙНЯТОСТІ (АКОРДЕОН) ===
 function toggleEmpCard(headerEl) {
 var card = headerEl.parentElement;
 var wasActive = card.classList.contains("active");
@@ -1309,7 +1293,6 @@ card.scrollIntoView({behavior: "smooth", block: "start"});
 }, 150);
 }
 }
-// === БЮДЖЕТ (симулятор родини Хоменків) ===
 var budgetData = [
 {id:1, name:"🏠 Житло (оренда, комунальні)", price:15000, type:"need", must:true},
 {id:2, name:"🍎 Харчування", price:12000, type:"need", must:true},
@@ -1418,7 +1401,6 @@ f.className = "feedback feedback-error";
 f.innerHTML = "<strong>❌ Не покриті обов'язкові витрати:</strong><br><em>" + missed.join(", ") + "</em>. Спочатку — потреби, потім — бажання.";
 }
 }
-// === ОСОБИСТИЙ БЮДЖЕТ (калькулятор) ===
 var myBudgetChecked = false;
 function initMyBudget() {
 myBudgetChecked = false;
@@ -1497,7 +1479,6 @@ f.className = "feedback feedback-error";
 }
 f.innerHTML = msg;
 }
-// === СОРТУВАННЯ ===
 var sortItems = [
 {id:1, text:"Визнач доходи: запиши всі джерела надходжень"},
 {id:2, text:"Заплануй витрати: обов'язкові, бажані, непередбачені"},
@@ -1653,7 +1634,6 @@ for (var k = 0; k < slotEls.length; k++) slotEls[k].classList.remove("correct-po
 }, 4000);
 }
 }
-// === КЛАСИФІКАЦІЯ ДОХОДІВ (трудові/нетрудові) ===
 var classifyData = [
 {text:"💼 Заробітна плата чоловіка", type:"labor"},
 {text:"💻 Оплата за фріланс дружини", type:"labor"},
@@ -1758,7 +1738,6 @@ for (var k = 0; k < all.length; k++) all[k].classList.remove("correct","incorrec
 }, 4000);
 }
 }
-// === КЛАСИФІКАЦІЯ НЕТРУДОВИХ НА 3 ГРУПИ ===
 var groupClassifyData = [
 {text:"🏦 Відсотки за депозитом", group:"property"},
 {text:"🏠 Орендна плата за квартиру", group:"property"},
@@ -1859,7 +1838,6 @@ for (var k = 0; k < all.length; k++) all[k].classList.remove("correct","incorrec
 }, 4000);
 }
 }
-// === УНІВЕРСАЛЬНІ ФУНКЦІЇ ===
 function tog(el) {
 if (el.classList.contains("disabled")) return;
 el.classList.toggle("selected");
@@ -1871,7 +1849,6 @@ var opts = group.querySelectorAll(".option");
 for (var i = 0; i < opts.length; i++) opts[i].classList.remove("selected");
 el.classList.add("selected");
 }
-// === СТАРТОВЕ ЗАВДАННЯ (КРОК 1) ===
 function chkStartTask() {
 var opts = document.querySelectorAll("#s1t1 .option");
 var f = document.getElementById("s1t1f");
@@ -1992,7 +1969,6 @@ f.innerHTML = "<strong>❌ " + ok + "/" + total + " правильно.</strong>
 setTimeout(function() { var ss = document.querySelectorAll("#" + prefix + " .matching-select"); for (var i = 0; i < ss.length; i++) ss[i].classList.remove("correct","incorrect"); }, 2000);
 }
 }
-// === ПОЯСНЕННЯ ДЛЯ ЗАВДАННЯ "ПОЗИКА — ЦЕ ДОХІД?" ===
 function chkTFLoan() {
 var cards = document.querySelectorAll("#s2t2q .tf-card");
 var f = document.getElementById("s2t2f");
@@ -2009,7 +1985,7 @@ var isCorrect = selected.querySelector(".tf-card-title").textContent.indexOf("Н
 if (isCorrect) {
 selected.classList.add("correct");
 f.className = "feedback feedback-success";
-f.innerHTML = "<strong>✅ Правильно!</strong><br><strong>📖 Пояснення:</strong> Позика або кредит — це <strong>НЕ дохід</strong>, а <strong>залучені кошти</strong>, які потрібно повернути з відсотками. Хоча ти тимчасово отримуєш гроші, вони не збільшують твій сукупний дохід — навпаки, збільшують твої зобов'язання. Справжній дохід — це кошти, які не потрібно повертати (зарплата, стипендія, подарунок тощо).";
+f.innerHTML = "<strong>✅ Правильно!</strong><br><strong>📖 Пояснення:</strong> Позика або кредит — це <strong>НЕ дохід</strong>, а <strong>залучені кошти</strong>, які потрібно повернути з відсотками. Хоча ти тимчасово отримуєш гроші, вони не збільшують твій сукупний дохід — навпаки, збільчують твої зобов'язання. Справжній дохід — це кошти, які не потрібно повертати (зарплата, стипендія, подарунок тощо).";
 for (var j = 0; j < cards.length; j++) cards[j].classList.add("disabled");
 addC("step2_task2");
 showToast("Завдання виконано!", "🎉");
@@ -2161,7 +2137,6 @@ if (e.key === "Escape") { var ms = document.querySelectorAll(".modal-overlay.act
 document.addEventListener("DOMContentLoaded", function() {
 loadP();
 goToMainPage();
-// Ініціалізація слухачів для особистого бюджету
 var mbIn = document.querySelectorAll('.mb-income');
 var mbEx = document.querySelectorAll('.mb-expense');
 var mbSv = document.getElementById('mbSavings');
